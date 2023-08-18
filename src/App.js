@@ -6,6 +6,7 @@ import Movies from './Components/Movies';
 import Celebrities from './Components/Celebrities';
 import Blog from './Components/Blog';
 import News from './Components/News';
+import Footer from "./Components/Footer";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/news' Component={News} />
         <Route path='/about' Component={About} />
       </Routes>
+      <Footer />
 
     </BrowserRouter>
 

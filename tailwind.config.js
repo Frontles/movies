@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         gemunu: ['Gemunu Libre', 'Sans Serif'],
         open: ['Open Sans', 'Sans Serif']
+      },
+      spacing: {
+        '128': '32rem',
       }
     },
     colors: {
@@ -31,6 +34,7 @@ module.exports = {
         '2xl': '1140px',
       }
     },
+
   },
   plugins: [],
 }

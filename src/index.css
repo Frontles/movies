@@ -11,8 +11,14 @@
   h6 {
     @apply font-gemunu uppercase;
   }
+  h2 {
+    @apply text-2xl;
+  }
 
   a {
-    @apply font-gemunu;
+    @apply font-gemunu uppercase;
+  }
+  body {
+    @apply font-open;
   }
 }

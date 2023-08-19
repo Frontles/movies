@@ -7,7 +7,7 @@ function Matrix() {
                 <img src='https://gega-project.netlify.app/images/matrix.png' className='lg:absolute lg:bottom-0' alt='matrix' />
             </div>
 
-            <div className='basis-1/2  flex flex-col justify-center py-7 space-y-2'>
+            <div className='basis-1/2  flex flex-col justify-center py-12 md:py-7  space-y-2'>
                 <h3 className='text-gega-melon text-l lg:text-lg'>ACTION, DARAMA, THRILLER</h3>
                 <h2 className='text-gega-black text-3xl'>Matrix reloaded</h2>
                 <p className='text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam cum neque exercitationem ab earum, consequatur deserunt pariatur. Corporis, asperiores nihil!</p>

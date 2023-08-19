@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+
+
+
+
 function Footer() {
+    const [subscribe, setSubscribe] = useState("");
+    const handleSubscribe = (e) => {
+        e.preventDefault();
+
+    }
+
+    const aboneOl = (e) => { setSubscribe(e.target.value); }
+
+
+
+
+
+
     return (
         <footer className='bg-black text-gega-white py-12 px-10 lg:px-0 '>
             <div className="container flex flex-col md:grid md:grid-cols-4 space-y-10 md:space-y-0">
@@ -39,11 +56,17 @@ function Footer() {
                 <div className="col-span-1 flex flex-col justify-start items-start space-y-2   ">
                     <Link className=" text-gega-red text-3xl" to="/">Abone Ol</Link>
 
-                    <div className='flex text-sm font-gemunu '>
-                        <input placeholder='Eposta Adresi Giriniz' type='text' className=' border-2  border-gega-red outline-none p-2 w-full md:w-28 lg:w-full  bg-black ' />
-                        <button type="submit" name="aboneol" id="" value="gönder" className='text-gega-white inline bg-gega-red p-2 font-gemunu text-sm uppercase'>Subscribe</button>
+                    <div className='flex text-sm font-gemunu'>
+                        <form className='flex flex-wrap' onSubmit={handleSubscribe} >
+                            <input placeholder='Eposta Adresi Giriniz' type='text' value={subscribe} onChange={aboneOl} className=' border-2 w-auto md:w-24 lg:w-auto border-gega-red outline-none py-2  bg-black' />
+                            <button type="submit" className='text-gega-white inline p-2 bg-gega-red font-gemunu text-sm uppercase'>Abone Ol</button>
+                        </form>
                     </div>
+
+                    {/* Arama ve login Bölgesi */}
+
                 </div>
+
             </div>
         </footer>
     )

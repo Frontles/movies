@@ -9,6 +9,10 @@ function Header() {
 
     const Ara = (e) => {
         setSearch(e.target.value)
+
+    }
+    const handleSearch = (e) => {
+        e.preventDefault();
         console.log(search)
     }
 
@@ -36,18 +40,18 @@ function Header() {
                         <NavLink className="text-gega-white hover:text-gega-melon transition duration-300 md:text-lg" to="/celebrities">Ünlüler</NavLink>
 
                         <NavLink className="text-gega-white hover:text-gega-melon transition duration-300 md:text-lg" to="/blog">Blog</NavLink>
+                        <NavLink className="text-gega-white hover:text-gega-melon transition duration-300 md:text-lg" to="/categories">Kategoriler</NavLink>
 
-                        <NavLink className="text-gega-white hover:text-gega-melon transition duration-300 md:text-lg" to="/news">Haberler</NavLink>
 
-                        <NavLink className="text-gega-white hover:text-gega-melon transition duration-300 md:text-lg" to="/about">Hakkımızda</NavLink>
+
 
                     </div>
                 </nav>
 
                 {/* Arama ve login Bölgesi */}
                 <div className='hidden group border-r px-3 lg:px-5 h-7 items-center md:flex text-gega-white'>
-                    <form>
-                        <input name="ara" placeholder='Ara' className='md:w-4  opacity-0 border-b  border-gega-red bg-transparent focus:opacity-100 focus:outline-none group-hover:opacity-100 transition duration-300' value={search} onChange={Ara} />
+                    <form className='flex' onSubmit={handleSearch}>
+                        <input name="ara" placeholder='Ara' className='w-full opacity-0 border-b  border-gega-red bg-transparent focus:opacity-100 focus:outline-none group-hover:opacity-100 transition duration-300' value={search} onChange={Ara} />
 
                         <button type='submit' className='group-hover:text-gega-red transition duration-300' >  <FontAwesomeIcon icon={faMagnifyingGlass} /></button>
                     </form>

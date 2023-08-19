@@ -13,7 +13,7 @@ function Footer() {
                     <Link className=" gap-16 text-gega-red text-3xl" to="/">LINKS</Link>
                     <div className='flex flex-col md:items-center  lg:text-lg space-y-3'>
 
-                        <Link className="text-gega-white hover:text-gega-melon transition duration-300" to="/movies">Movies</Link>
+                        <Link className="text-gega-white hover:text-gega-melon transition duration-300 " to="/movies">Movies</Link>
 
                         <Link className="text-gega-white hover:text-gega-melon transition duration-300" to="/celebrities">Celebrities</Link>
 
@@ -28,7 +28,7 @@ function Footer() {
                     <div className='flex flex-col md:items-center  lg:text-lg space-y-3'>
 
 
-                        <Link className="text-gega-white hover:text-gega-melon transition duration-300" to="/news">News</Link>
+                        <Link className="text-gega-white hover:text-gega-melon transition duration-300 inline" to="/news">News</Link>
 
                         <Link className="text-gega-white hover:text-gega-melon transition duration-300" to="/about">About</Link>
 
@@ -36,12 +36,12 @@ function Footer() {
                 </div>
 
 
-                <div className="col-span-1 flex flex-col justify-start items-start space-y-2">
+                <div className="col-span-1 flex flex-col justify-start items-start space-y-2   ">
                     <Link className=" text-gega-red text-3xl" to="/">Abone Ol</Link>
 
                     <div className='flex text-sm font-gemunu '>
-                        <input placeholder='Eposta Adresi Giriniz' type='text' className=' border-2 md:w-28 border-gega-red outline-none bg-black p-2' />
-                        <button type="submit" name="aboneol" id="" value="gönder" className='text-gega-white  bg-gega-red py-2 px-4 font-gemunu text-sm uppercase'>Abone Ol</button>
+                        <input placeholder='Eposta Adresi Giriniz' type='text' className=' border-2  border-gega-red outline-none p-2 w-full md:w-28 lg:w-full  bg-black ' />
+                        <button type="submit" name="aboneol" id="" value="gönder" className='text-gega-white inline bg-gega-red p-2 font-gemunu text-sm uppercase'>Subscribe</button>
                     </div>
                 </div>
             </div>

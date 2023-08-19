@@ -3,15 +3,14 @@ import Hero from './Hero'
 import MovieList from './MovieList'
 import Matrix from './Matrix'
 import PopularPosts from './PopularPosts'
+import HotNews from './HotNews'
 function Home() {
   return (
     <>
       <Hero />
-      <MovieList />
+      <MovieList hotnews={<HotNews />} />
       <Matrix />
       <PopularPosts />
-
-
     </>
   )
 }

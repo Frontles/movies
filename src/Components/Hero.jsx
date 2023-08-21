@@ -46,7 +46,7 @@ function Hero() {
   }
 
   return (
-    <div className='h-96 lg:h-128 group relative'>
+    <div className='h-96 lg:h-128 group relative z-10'>
       <div className='h-full w-full bg-cover bg-center duration-500 ' style={{ backgroundImage: `url(${slides[currentIndex].url})` }} >
 
         <div className="absolute bottom-0  w-full bg-gradient-to-b from-transparent to-black px-3 lg:pl-0">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Link } from 'react-router-dom';
 
 import MovieListItem from './MovieListItem';
@@ -30,4 +30,4 @@ function MovieList(props) {
     )
 }
 
-export default MovieList
+export default memo(MovieList)

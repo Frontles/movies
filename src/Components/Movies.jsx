@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import MovieList from './MovieList'
 
 function Movies() {
@@ -19,4 +19,4 @@ function Movies() {
   )
 }
 
-export default Movies
+export default memo(Movies)

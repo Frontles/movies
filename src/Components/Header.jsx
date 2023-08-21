@@ -1,20 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faBars } from '@fortawesome/free-solid-svg-icons'
+import AramaKutusu from './AramaKutusu';
 
 function Header() {
-    const [search, setSearch] = useState("");
+    const [SearchButton, SetSearchButton] = useState(false);
 
-    const Ara = (e) => {
-        setSearch(e.target.value)
 
-    }
-    const handleSearch = (e) => {
-        e.preventDefault();
-        console.log(search)
-    }
 
     return (
         <header className='bg-black text-gega-grey py-7 lg:py-12 uppercase'>
@@ -48,13 +42,9 @@ function Header() {
                     </div>
                 </nav>
 
-                {/* Arama ve login Bölgesi */}
-                <div className='hidden group border-r px-3 lg:px-5 h-7 items-center md:flex text-gega-white'>
-                    <form className='flex' onSubmit={handleSearch}>
-                        <input name="ara" placeholder='Ara' className='w-full opacity-0 border-b  border-gega-red bg-transparent focus:opacity-100 focus:outline-none group-hover:opacity-100 transition duration-300' value={search} onChange={Ara} />
-
-                        <button type='submit' className='group-hover:text-gega-red transition duration-300' >  <FontAwesomeIcon icon={faMagnifyingGlass} /></button>
-                    </form>
+                <div className='hidden  border-r px-3 lg:px-5 h-7 items-center md:flex md:flex-col text-gega-white'>
+                    <FontAwesomeIcon className='hover:text-gega-red transition duration-300 cursor-pointer' icon={faMagnifyingGlass} onClick={() => { SetSearchButton(true) }} />
+                    <AramaKutusu Trigger={SearchButton} setTrigger={SetSearchButton} />
                 </div>
 
                 <div className=' items-center hidden md:flex space-x-7 text-gega-white'>
@@ -71,4 +61,4 @@ function Header() {
     )
 }
 
-export default Header
+export default memo(Header)

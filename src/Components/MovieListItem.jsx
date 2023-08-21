@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -49,4 +49,4 @@ function MovieListItem(props) {
     ))
 }
 
-export default MovieListItem
+export default memo(MovieListItem)

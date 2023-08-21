@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Hero() {
 
+
+
   const slides = [
     {
       url: "https://gega-project.netlify.app/images/batman.jpg",

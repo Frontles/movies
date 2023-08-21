@@ -18,12 +18,8 @@ function MovieList(props) {
 
                     <div className="flex flex-wrap ">
                         {/* Movie Items */}
-                        <MovieListItem kaynak='https://gega-project.netlify.app/images/mv1.jpg' />
-                        <MovieListItem kaynak='https://gega-project.netlify.app/images/mv2.jpg' />
-                        <MovieListItem kaynak='https://gega-project.netlify.app/images/mv3.jpg' />
-                        <MovieListItem kaynak='https://gega-project.netlify.app/images/mv4.jpg' />
-                        <MovieListItem kaynak='https://gega-project.netlify.app/images/mv5.jpg' />
-                        <MovieListItem kaynak='https://gega-project.netlify.app/images/mv6.jpg' />
+                        <MovieListItem />
+
                     </div>
 
                 </div>

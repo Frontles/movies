@@ -13,22 +13,22 @@ function PopularPosts() {
                 {/* GRID LAYOUT */}
                 <div className=" grid grid-cols-6 gap-10">
                     {/* ITEM 1 */}
-                    <PopularItem Kapladigiyer={3} />
+                    <PopularItem kapladigiYer={3} />
 
                     {/* ITEM 2 */}
 
-                    <PopularItem Kapladigiyer={3} />
+                    <PopularItem kapladigiYer={3} />
 
                     {/* ITEM 3 */}
 
-                    <PopularItem Kapladigiyer={2} />
+                    <PopularItem kapladigiYer={2} />
 
                     {/* ITEM 4 */}
 
-                    <PopularItem Kapladigiyer={2} />
+                    <PopularItem kapladigiYer={2} />
 
                     {/* ITEM 5 */}
-                    <PopularItem Kapladigiyer={2} />
+                    <PopularItem kapladigiYer={2} />
 
                 </div>
             </div>

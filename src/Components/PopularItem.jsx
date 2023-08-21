@@ -4,9 +4,10 @@ import { faComment } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 function PopularItem(props) {
+
     return (
 
-        <div className={`col-span-6 md:col-span-${props.Kapladigiyer}  border border-gega-red`}>
+        <div className={`col-span-6 md:col-span-${props.kapladigiYer} border border-gega-red`}>
             <div className="border-b border-gega-melon flex justify-between p-2 px-4 items-center ">
                 <h3>Lorem, ipsum dolor...</h3>
                 <img src='https://gega-project.netlify.app/images/userava1.jpg' alt='avatar' className='rounded-full' />

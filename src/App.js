@@ -8,8 +8,18 @@ import Blog from './Components/Blog';
 import Footer from "./Components/Footer";
 
 
+
+
+
 function App() {
+
+
+
+
+
+
   return (
+
 
 
     <BrowserRouter>

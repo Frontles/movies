@@ -13,16 +13,14 @@ function Header() {
     return (
         <header className='bg-black text-gega-grey py-7 lg:py-12 uppercase'>
 
-            <div className='flex items-center container justify-between space-x-2 lg:space-x-5'>
+            <div className='flex items-center  justify-end container md:justify-between space-x-4 lg:space-x-5'>
 
                 {/* Logo Bölgesi */}
 
-                <Link className=" pl-4 lg:pl-0 text-transparent bg-gradient-to-r bg-clip-text from-gega-red to-blue-500 text-3xl lg:text-6xl font-bold" to="/">Frontles</Link>
+                <Link className="mr-auto pl-4 lg:pl-0 text-transparent bg-gradient-to-r bg-clip-text from-gega-red to-blue-500 text-3xl lg:text-6xl font-bold" to="/">Frontles</Link>
 
                 {/* mobile menü  */}
-                <div className='pr-4 block md:hidden' >
-                    <button> <FontAwesomeIcon icon={faBars} size='2xl' /></button>
-                </div>
+
                 {/* navbar Bölgesi */}
 
                 <nav className='hidden md:flex justify-between flex-1 '>
@@ -42,9 +40,12 @@ function Header() {
                     </div>
                 </nav>
 
-                <div className='hidden  border-r px-3 lg:px-5 h-7 items-center md:flex md:flex-col text-gega-white'>
+                <div className='md:border-r md:px-5 flex flex-col text-gega-white '>
                     <FontAwesomeIcon className='hover:text-gega-red transition duration-300 cursor-pointer' icon={faMagnifyingGlass} onClick={() => { SetSearchButton(true) }} />
                     <AramaKutusu Trigger={SearchButton} setTrigger={SetSearchButton} />
+                </div>
+                <div className='pr-4 block md:hidden ' >
+                    <button> <FontAwesomeIcon icon={faBars} size='2xl' /></button>
                 </div>
 
                 <div className=' items-center hidden md:flex space-x-7 text-gega-white'>

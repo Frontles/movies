@@ -10,14 +10,18 @@ function MovieListItem(props) {
 
     const [movies, SetMovies] = useState([{}]);
 
+
     useEffect(() => {
         const MoviesData = async () => {
             const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=tr-TR`);
             const data = res.data.results;
 
-            SetMovies(data.slice(0, 9))
+            const filtrelenmisFilmler = data.filter((film) => {
+                return (props.kategori ? film.genre_ids.indexOf(props.kategori) !== -1 : "")
 
+            })
 
+            SetMovies(filtrelenmisFilmler.slice(0, 6))
 
 
 
@@ -25,7 +29,8 @@ function MovieListItem(props) {
         MoviesData()
 
 
-    }, [])
+
+    }, [props.kategori])
 
     const truncateOverview = (string, maxLength) => {
         if (!string) return null;
@@ -34,7 +39,9 @@ function MovieListItem(props) {
     }
 
 
-    return movies.map((movie, index) => (
+
+
+    return movies.length !== 0 ? movies.map((movie, index) => (
         <div className="group relative overflow-hidden basis-1/3" key={index} >
             <img src={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/" + movie.poster_path} alt={movie.title} className='w-full h-full group-hover:scale-110 group-hover:opacity-30 duration-500' />
             <div className="absolute px-3 md:px-6 bottom-2 md:bottom-8 ">
@@ -46,7 +53,8 @@ function MovieListItem(props) {
                 </div>
             </div>
         </div>
-    ))
+    )) : <div className='text-white py-24 my-10'>Bu Kategoriye ait Kayıt Bulunamadı</div>
+
 }
 
 export default memo(MovieListItem)

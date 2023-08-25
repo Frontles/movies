@@ -13,7 +13,7 @@ function MovieListItem(props) {
 
     useEffect(() => {
         const MoviesData = async () => {
-            const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=tr-TR`);
+            const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=tr-TR&page=3`);
             const data = res.data.results;
 
             const filtrelenmisFilmler = data.filter((film) => {
@@ -21,7 +21,7 @@ function MovieListItem(props) {
 
             })
 
-            SetMovies(filtrelenmisFilmler.slice(0, 6))
+            SetMovies(filtrelenmisFilmler.slice(0, 9))
 
 
 

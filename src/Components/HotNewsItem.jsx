@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function HotNewsItem(props) {
 
@@ -34,16 +35,19 @@ function HotNewsItem(props) {
 
 
     return (movies.map((movie, index) => (
-        <div key={index} className='flex space-x-12 group cursor-pointer items-center basis-3/4 md:basis-1/2'>
-            <div className='basis-1/3 h-full'>
-                <img src={` https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} alt='news' className='h-full w-full object-cover' />
-            </div>
+        <Link to={`/movie/${movie.id}`}>
+            <div key={index} className='flex space-x-12 group cursor-pointer items-center basis-3/4 md:basis-1/2'>
+                <div className='basis-1/3 h-full'>
+                    <img src={` https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} alt='news' className='h-full w-full object-cover' />
+                </div>
 
-            <div className='group-hover:text-gega-melon text-gega-grey basis-2/3'>
-                <p className='mb-2 text-sm'>{truncateOverview(movie.overview, 120)}</p>
-                <p className='font-gemunu uppercase bold text-sm'>Çıkış Tarihi: {movie.release_date}</p>
+                <div className='group-hover:text-gega-melon text-gega-grey basis-2/3'>
+                    <h3 className='text-md text-gega-red'>{movie.title}</h3>
+                    <p className='mb-2 text-sm'>{truncateOverview(movie.overview, 100)}</p>
+                    <p className='font-gemunu uppercase bold text-sm'>Çıkış Tarihi: {movie.release_date}</p>
+                </div>
             </div>
-        </div>
+        </Link>
     ))
 
     )

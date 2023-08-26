@@ -11,7 +11,7 @@ function Movies() {
       <div className="container movieCategory">
         <h1 className='text-3xl text-gega-red '>Film Kategorileri</h1>
 
-        <MovieList />
+        <MovieList page="movies" />
 
       </div>
 

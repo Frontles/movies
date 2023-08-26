@@ -25,7 +25,6 @@ function HotNewsItem(props) {
 
     }, [])
 
-    console.log(movies)
 
     const truncateOverview = (string, maxLength) => {
         if (!string) return null;

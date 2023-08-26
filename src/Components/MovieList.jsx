@@ -31,7 +31,7 @@ function MovieList(props) {
 
                     <div className="flex flex-wrap ">
                         {/* Movie Items */}
-                        <MovieListItem kategori={seciliKategori} />
+                        <MovieListItem kategori={seciliKategori} page={props.page} />
 
                     </div>
 

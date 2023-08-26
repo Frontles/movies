@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
       <Hero />
-      <MovieList hotnews={<HotNews />} />
+      <MovieList hotnews={<HotNews />} page="home" />
       <Matrix />
       <PopularPosts />
     </>

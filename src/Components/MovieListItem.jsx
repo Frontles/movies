@@ -13,7 +13,7 @@ function MovieListItem(props) {
 
     useEffect(() => {
         const MoviesData = async () => {
-            const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=tr-TR&page=3`);
+            const res = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=tr-TR&page=2`);
             const data = res.data.results;
 
             const filtrelenmisFilmler = data.filter((film) => {
@@ -21,7 +21,19 @@ function MovieListItem(props) {
 
             })
 
-            SetMovies(filtrelenmisFilmler.slice(0, 9))
+            if (props.page === "home") {
+                SetMovies(filtrelenmisFilmler.slice(0, 9))
+
+
+
+
+            }
+            else if (props.page === "movies") {
+                SetMovies(filtrelenmisFilmler)
+
+            }
+
+
 
 
 
@@ -30,7 +42,7 @@ function MovieListItem(props) {
 
 
 
-    }, [props.kategori])
+    }, [props.kategori, props.page])
 
     const truncateOverview = (string, maxLength) => {
         if (!string) return null;

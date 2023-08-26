@@ -52,12 +52,12 @@ function MovieDetail() {
                     {/* img */}
                     <div className='container'>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center space-x-7 space-y-5 lg:space-y-0">
+                        <div className="flex flex-col sm:flex-row items-center justify-center lg:space-x-7 space-y-5 lg:space-y-0">
                             <div className='flex items-center justify-center gap-5 basis-1/3'>
                                 <img src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${movie.poster_path}`} className=' max-h-72 md:max-h-80 lg:max-h-max lg:w-auto  object-cover' alt='movie' />
 
                             </div>
-                            <div className='basis-2/3 space-y-3'>
+                            <div className='basis-2/3 space-y-3 px-5 lg:px-0'>
                                 <h2 className="text-4xl font-bold text-white flex items-center ">
                                     {movie.title}   <span className='text-xl text-gega-grey'>     (   IMDB : {movie.vote_average?.toFixed(1)} )</span>
                                 </h2>

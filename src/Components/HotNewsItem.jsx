@@ -41,9 +41,9 @@ function HotNewsItem(props) {
                     <img src={` https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} alt='news' className='h-full w-full object-cover' />
                 </div>
 
-                <div className='group-hover:text-gega-melon text-gega-grey basis-2/3'>
+                <div className='group-hover:text-gega-melon text-gega-grey basis-2/3 pr-5'>
                     <h3 className='text-md text-gega-red'>{movie.title}</h3>
-                    <p className='mb-2 text-sm'>{truncateOverview(movie.overview, 100)}</p>
+                    <p className='mb-2 text-sm '>{truncateOverview(movie.overview, 100)}</p>
                     <p className='font-gemunu uppercase bold text-sm'>Çıkış Tarihi: {movie.release_date}</p>
                 </div>
             </div>

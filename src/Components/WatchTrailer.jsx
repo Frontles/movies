@@ -12,8 +12,9 @@ function WatchTrailer(props) {
 
 
     const opts = {
-        height: '600',
-        width: '1000',
+        width: "100%",
+        height: "550",
+
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
             autoplay: 1,
@@ -27,7 +28,7 @@ function WatchTrailer(props) {
 
 
 
-                <Youtube videoId={props.videoKey} opts={opts} />
+                <Youtube style={{ width: "100%", height: "100%" }} videoId={props.videoKey} opts={opts} />
 
 
 

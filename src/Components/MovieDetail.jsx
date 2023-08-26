@@ -50,7 +50,7 @@ function MovieDetail() {
 
 
                     {/* img */}
-                    <div className='container'>
+                    <div className='container py-10'>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:space-x-7 space-y-5 lg:space-y-0">
                             <div className='flex items-center justify-center gap-5 basis-1/3'>

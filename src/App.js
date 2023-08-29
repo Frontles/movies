@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
-import Categories from "./Components/Categories";
 import Home from './Components/Home';
 import Movies from './Components/Movies';
 import Celebrities from './Components/Celebrities';
@@ -31,7 +30,6 @@ function App() {
         <Route path='/movie/:movie_id' Component={MovieDetail} />
         <Route path='/celebrities' Component={Celebrities} />
         <Route path='/blog' Component={Blog} />
-        <Route path='/categories' Component={Categories} />
 
       </Routes>
       <Footer />

@@ -14,9 +14,16 @@ function MovieDetail() {
 
     useEffect(() => {
         const MoviesData = async () => {
-            const res = await axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${process.env.REACT_APP_API_KEY}&language=tr-TR`);
+            const res = await axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`);
             setMovie(res.data)
 
+            const trailer = res.data.videos.results.find(vid => vid.name === 'Official Trailer')
+            if (trailer === "" || trailer === undefined) {
+                setVideoKey("")
+            } else {
+                setVideoKey(trailer.key)
+
+            }
 
 
 
@@ -24,20 +31,7 @@ function MovieDetail() {
         }
         MoviesData()
 
-        const VideoData = async () => {
-            const res = await axios.get(`https://api.themoviedb.org/3/movie/${movie_id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=tr-TR`);
-            const data = res.data.results;
-            data.map((video) => {
-                return setVideoKey(video.key)
-            })
 
-
-
-
-
-        }
-
-        VideoData()
     }, [movie_id])
 
 
@@ -62,7 +56,7 @@ function MovieDetail() {
                                     {movie.title}   <span className='text-xl text-gega-grey'>     (   IMDB : {movie.vote_average?.toFixed(1)} )</span>
                                 </h2>
                                 <p className='text-sm text-gega-grey'>Çıkış Tarihi : {movie.release_date} •  {movie.runtime} Dakika  </p>
-                                <p className='text-sm text-gega-grey'>  {movie.genres?.map((genre, index) => (<span className=' border rounded-xl px-4 py-1 mx-1' key={index}>{genre.name}</span>))} </p>
+                                <p className='text-sm text-gega-grey'>  {movie.genres?.map((genre, index) => (<span key={index} className=' border rounded-xl px-4 py-1 mx-1'  >{genre.name}</span>))} </p>
                                 <h3 className='font-bold text-white text-xl'>Özet</h3>
                                 <p className='text-sm text-gega-grey'>{movie.overview}</p>
 

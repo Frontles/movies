@@ -1,5 +1,4 @@
 import React, { memo } from 'react'
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from "react";
@@ -33,6 +32,7 @@ function MovieListItem(props) {
 
             }
 
+
         }
         MoviesData()
     }, [props.kategori, props.page])
@@ -48,14 +48,13 @@ function MovieListItem(props) {
 
     return movies.length !== 0 ? movies.map((movie, index) => (
 
-        <div className="group relative overflow-hidden basis-1/3" key={index} >
+        <div key={index} className="group relative overflow-hidden basis-1/3"  >
             <img src={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/" + movie.poster_path} alt={movie.title} className='w-full h-full group-hover:scale-110 group-hover:opacity-30 duration-500' />
             <div className="absolute px-3 md:px-6 bottom-2 md:bottom-8 ">
                 <h3 className='text-gega-grey group-hover:text-gega-melon group-hover:mb-2 duration-500 '>{movie.title}</h3>
                 <p className='text-xs md:text-sm text-gega-grey opacity-0 group-hover:opacity-100 duration-500 group-hover:mb-2 md:group-hover:mb-5'>{truncateOverview(movie.overview, 50)}</p>
-                <div className=' flex space-x-5'>
-                    <FontAwesomeIcon className='text-gega-grey opacity-0 group-hover:opacity-100 -mb-3 group-hover:mb-3 duration-500 cursor-pointer hover:text-gega-red' icon={faPlay} />
-                    <Link to={`/movie/${movie.id}`}><FontAwesomeIcon className='text-gega-grey opacity-0 group-hover:opacity-100 -mb-3 group-hover:mb-3 duration-500 cursor-pointer hover:text-gega-red' icon={faArrowRight} /></Link>
+                <div className=' flex space-x-5 '>
+                    <Link to={`/movie/${movie.id}`} className='flex items-center text-gega-grey opacity-0 group-hover:opacity-100 -mb-3 group-hover:mb-3 duration-500 cursor-pointer hover:text-gega-red '>Filmi İncele   <FontAwesomeIcon className='px-2' icon={faArrowRight} size='xs' /></Link>
 
                 </div>
             </div>

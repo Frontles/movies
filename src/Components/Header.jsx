@@ -32,7 +32,6 @@ function Header() {
                         <NavLink className="text-gega-white hover:text-gega-melon transition duration-300 md:text-lg" to="/celebrities">Ünlüler</NavLink>
 
                         <NavLink className="text-gega-white hover:text-gega-melon transition duration-300 md:text-lg" to="/blog">Blog</NavLink>
-                        <NavLink className="text-gega-white hover:text-gega-melon transition duration-300 md:text-lg" to="/categories">Kategoriler</NavLink>
 
 
 

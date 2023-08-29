@@ -13,13 +13,22 @@ function Hero() {
 
   const slides = [
     {
-      url: "https://gega-project.netlify.app/images/batman.jpg",
+      url: "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+      title: "Inception",
+      id: "27205",
+      overview: "Uzmanlık alanı, zihnin en karanlık ve savunmasız olduğu rüya anında, bilinçaltının derinliklerindeki değerli sırları çekip çıkarmak ve onları çalmaktır. "
     },
     {
-      url: "https://play-lh.googleusercontent.com/1-hPxafOxdYpYZEOKzNIkSP43HXCNftVJVttoo4ucl7rsMASXW3Xr6GlXURCubE1tA=w3840-h2160-rw",
+      url: "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/dIWwZW7dJJtqC6CgWzYkNVKIUm8.jpg",
+      title: "Senin Adın",
+      id: "372058",
+      overview: "Mitsuha Miyamizu, kırsal kesimde, dağların etrafını sardığı bir kentte yaşamaktadır. Vali olan babası genellikte evde bulunmadığından evinde daha çok ilkokul öğrencisi kız kardeşi...",
     },
     {
-      url: "https://images5.alphacoders.com/998/998470.jpg"
+      title: "Genç Deniz Canavarı Ruby",
+      overview: "Utangaç bir genç, efsanevi deniz canavarlarının efsanevi kraliyet soyunun bir parçası olduğunu ve okyanusların derinliklerindeki kaderinin hayal ettiğinden daha büyük olduğunu keşfeder.",
+      url: "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/f7UI3dYpr7ZUHGo0iIr1Qvy1VPe.jpg",
+      id: "1040148"
     }
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -55,13 +64,11 @@ function Hero() {
               <h3 className='text-gega-melon text-l lg:text-lg'>ACTION, DARAMA, THRILLER
               </h3>
               <h1 className="text-gega-grey text-4xl lg:text-6xl font-bold">
-                THE DARK KNIGHT
+                {slides[currentIndex].title}
 
               </h1>
               <p className='text-gega-grey lg:text-lg w-full md:w-3/4 lg:w-2/3 mb-4 '>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sapiente quas officia aut quidem?
-                Numquam fuga quis repellendus ad beatae culpa?
+                {slides[currentIndex].overview}
               </p>
               <div className="flex  opacity-0 group-hover:opacity-100 group-hover:mb-7 lg:group-hover:mb-14 duration-500">
                 <Link to="#" className='text-gega-white hover:text-gega-red duration-500 lg:text-lg flex'>
@@ -69,7 +76,7 @@ function Hero() {
                   <div className='mx-3 flex h-8 w-8 bg-gega-red items-center !text-gega-white justify-center rounded-full'>
                     {<FontAwesomeIcon icon={faPlay} fontSize="15px" />}</div>
                 </Link>
-                <Link to="#" className='mx-10 text-gega-white hover:text-gega-red duration-500 lg:text-lg flex'>
+                <Link to={`/movie/${slides[currentIndex].id}`} className='mx-10 text-gega-white hover:text-gega-red duration-500 lg:text-lg flex'>
                   Daha Fazla Bilgi
                   <div className='mx-3 flex h-8 w-8 bg-gega-red items-center !text-gega-white justify-center rounded-full'>
                     {<FontAwesomeIcon icon={faArrowRight} fontSize="15px" />}</div>

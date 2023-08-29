@@ -34,9 +34,9 @@ function HotNewsItem(props) {
     }
 
 
-    return (movies.map((movie, index) => (
-        <Link to={`/movie/${movie.id}`}>
-            <div key={index} className='flex space-x-12 group cursor-pointer items-center basis-3/4 md:basis-1/2'>
+    return (movies.map((movie, movieIndex) => (
+        <Link key={movieIndex} to={`/movie/${movie.id}`}>
+            <div className='flex space-x-12 group cursor-pointer items-center basis-3/4 md:basis-1/2'>
                 <div className='basis-1/3 h-full'>
                     <img src={` https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} alt='news' className='h-full w-full object-cover' />
                 </div>

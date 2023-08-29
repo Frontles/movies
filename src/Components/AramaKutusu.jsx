@@ -90,7 +90,7 @@ export default function AramaKutusu(props) {
 
 
 
-                <button className='absolute top-0 left-1/2 lg:top-20 lg:-right-80' onClick={() => props.setTrigger(false)} >  {!isNaN(search) ? <FontAwesomeIcon icon={faCircleXmark} size='2xl' /> : ""}</button>
+                <button className='absolute top-0 left-1/2 lg:top-20 lg:-right-80' onClick={() => props.setTrigger(false)} >  <FontAwesomeIcon icon={faCircleXmark} size='2xl' /> </button>
 
 
             </div>

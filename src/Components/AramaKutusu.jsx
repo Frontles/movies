@@ -1,15 +1,15 @@
 import React from 'react'
 
 
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 import { faMagnifyingGlass, faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 
-function SearchItem(props) {
+export function SearchItem(props) {
 
     const [searchMovies, SetsearchMovies] = useState([{}]);
 
@@ -53,8 +53,8 @@ function SearchItem(props) {
                 <h3 className=' text-gega-red md:text-black group-hover:text-gega-melon text-2xl md:group-hover:text-3xl duration-500 '>{movie.title}</h3>
                 <p className='text-black  text-sm py-10 pr-10 duration-500 '>{truncateOverview(movie.overview, 200)}</p>
                 <div className=' relative lg:absolute bottom-0  flex md:my-12 space-x-5 sm:items-center  lg:items-center lg:justify-center '>
-                    <FontAwesomeIcon className='text-gega-melon bg-gega-red p-3 lg:opacity-0 group-hover:opacity-100 lg:-mb-3 group-hover:mb-3 duration-500 cursor-pointer hover:text-gega-red hover:bg-gega-melon' icon={faPlay} />
-                    <FontAwesomeIcon className='text-gega-melon bg-gega-red p-3 lg:opacity-0 group-hover:opacity-100 lg:-mb-3 group-hover:mb-3 duration-500 cursor-pointer hover:text-gega-red hover:bg-gega-melon' icon={faArrowRight} />
+
+                    <Link to={`/movie/${movie.id}`} ><FontAwesomeIcon className='text-gega-melon bg-gega-red p-3 lg:opacity-0 group-hover:opacity-100 lg:-mb-3 group-hover:mb-3 duration-500 cursor-pointer hover:text-gega-red hover:bg-gega-melon' icon={faArrowRight} /></Link>
                 </div>
             </div>
         </div>
@@ -85,6 +85,7 @@ export default function AramaKutusu(props) {
                 <div className=" flex flex-col w-full !m-0 !mt-10  bg-white shadow-md !rounded-xl max-h-128 overflow-y-scroll  items-center justify-between duration-1000  ">
                     {/* Movie Items   */}
                     <SearchItem arananfilm={search} />
+
                 </div>
 
 
